@@ -35,8 +35,15 @@ class Countries
      */
     protected function getFilePath($language)
     {
+        $path = dirname(__FILE__) . '/../../';
+
+        // if our class is loaded from composer, the path to umpirski changes
+        if (strpos('/vendor/', dirname(__FILE__)) !== false) {
+            $path .= '../../../';
+        }
+
         // our files with countries are placed in the country-list vendor
-        return dirname(__FILE__) . '/../../vendor/umpirsky/country-list/country/icu/' .
+        return $path . 'vendor/umpirsky/country-list/country/icu/' .
             $language . '/country.php'
         ;
     }
