@@ -1,0 +1,22 @@
+{
+    "name": "woutersioen/country-list",
+    "type": "library",
+    "description": "A Sir Trevor to HTML conversion helper for PHP",
+    "keywords": ["Sir Trevor", "html"],
+    "homepage": "https://github.com/WouterSioen/country-list",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wouter Sioen",
+            "email": "info@woutersioen.be",
+            "homepage": "http://woutersioen.be"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Sioen": "src/" }
+    },
+    "require": {
+        "php": ">=5.3",
+        "umpirsky/country-list": "1.*"
+    }
+}

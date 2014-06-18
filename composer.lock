@@ -1,0 +1,74 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "62681a8020aa86cfb24dd5cb9426354c",
+    "packages": [
+        {
+            "name": "umpirsky/country-list",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/umpirsky/country-list.git",
+                "reference": "abb111a0fd537455670fa394b3f39eebb0087614"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/umpirsky/country-list/zipball/abb111a0fd537455670fa394b3f39eebb0087614",
+                "reference": "abb111a0fd537455670fa394b3f39eebb0087614",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/dbal": "2.*",
+                "symfony/class-loader": "2.1.*",
+                "symfony/console": "2.1.*",
+                "symfony/filesystem": "2.1.*",
+                "symfony/finder": "2.1.*",
+                "symfony/locale": "2.1.*",
+                "symfony/yaml": "2.1.*",
+                "zendframework/zend-db": "2.0.*",
+                "zendframework/zendframework1": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Umpirsky\\Country": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Саша Стаменковић",
+                    "email": "umpirsky@gmail.com",
+                    "homepage": "http://umpirsky.com"
+                }
+            ],
+            "description": "List of all countries with names and ISO 3166-1 codes in all languages and data formats.",
+            "time": "2012-11-27 09:51:19"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.3"
+    },
+    "platform-dev": [
+
+    ]
+}
