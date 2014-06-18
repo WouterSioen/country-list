@@ -38,7 +38,7 @@ class Countries
         $path = dirname(__FILE__) . '/../../';
 
         // if our class is loaded from composer, the path to umpirski changes
-        if (strpos('/vendor/', dirname(__FILE__)) !== false) {
+        if (strpos(dirname(__FILE__), '/vendor/') !== false) {
             $path .= '../../../';
         }
 
