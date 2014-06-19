@@ -9,28 +9,49 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
     function testGetFilePathReturnsPathToAFile()
     {
         $countries = new Countries();
-        $method = $this->getPublicMethod('Sioen\Countries', 'getFilePath');
-
-        $filePath = $method->invokeArgs($countries, array('en'));
+        $filePath = $this->invokeProtectedMethod(
+            'Sioen\Countries',
+            'getFilePath',
+            $countries,
+            array('en')
+        );
         $this->assertTrue(is_file($filePath));
 
-        $filePath = $method->invokeArgs($countries, array('nl'));
+        $filePath = $this->invokeProtectedMethod(
+            'Sioen\Countries',
+            'getFilePath',
+            $countries,
+            array('nl')
+        );
         $this->assertTrue(is_file($filePath));
 
-        $filePath = $method->invokeArgs($countries, array('de'));
+        $filePath = $this->invokeProtectedMethod(
+            'Sioen\Countries',
+            'getFilePath',
+            $countries,
+            array('de')
+        );
         $this->assertTrue(is_file($filePath));
     }
 
     function testGetFilePathThrowsExceptionIfFileNotfound()
     {
         $countries = new Countries();
-        $method = $this->getPublicMethod('Sioen\Countries', 'getFilePath');
+        $this->setExpectedException('InvalidArgumentException', 'Invalid language');
+        $filePath = $this->invokeProtectedMethod(
+            'Sioen\Countries',
+            'getFilePath',
+            $countries,
+            array('qsdfqsdfsqdf')
+        );
 
         $this->setExpectedException('InvalidArgumentException', 'Invalid language');
-        $filePath = $method->invokeArgs($countries, array('qsdfqsdfsqdf'));
-
-        $this->setExpectedException('InvalidArgumentException', 'Invalid language');
-        $filePath = $method->invokeArgs($countries, array(''));
+        $filePath = $this->invokeProtectedMethod(
+            'Sioen\Countries',
+            'getFilePath',
+            $countries,
+            array('')
+        );
     }
 
     function testGetSpecificForLanguage()
@@ -63,13 +84,15 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
      *
      * @param string $class Name of the class
      * @param string $name  Name of the method
-     * @return \ReflectionMethod
+     * @param Class  $instance instance of the class
+     * @param array  $arguments The arguments that need to be passed to the method
+     * @return mixed
      */
-    protected function getPublicMethod($class, $name)
+    protected function invokeProtectedMethod($class, $name, $instance, $arguments)
     {
         $class = new \ReflectionClass($class);
         $method = $class->getMethod($name);
         $method->setAccessible(true);
-        return $method;
+        return $method->invokeArgs($instance, $arguments);;
     }
 }
