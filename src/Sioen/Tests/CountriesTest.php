@@ -21,6 +21,18 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(is_file($filePath));
     }
 
+    function testGetFilePathThrowsExceptionIfFileNotfound()
+    {
+        $countries = new Countries();
+        $method = $this->getPublicMethod('Sioen\Countries', 'getFilePath');
+
+        $this->setExpectedException('InvalidArgumentException', 'Invalid language');
+        $filePath = $method->invokeArgs($countries, array('qsdfqsdfsqdf'));
+
+        $this->setExpectedException('InvalidArgumentException', 'Invalid language');
+        $filePath = $method->invokeArgs($countries, array(''));
+    }
+
     /**
      * Returns a public version of a method
      *

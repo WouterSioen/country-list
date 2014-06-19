@@ -42,9 +42,15 @@ class Countries
         }
 
         // our files with countries are placed in the country-list vendor
-        return $path . 'vendor/umpirsky/country-list/country/icu/' .
+        $path .= 'vendor/umpirsky/country-list/country/icu/' .
             $language . '/country.php'
         ;
+
+        if (!is_file($path)) {
+            throw new \InvalidArgumentException('Invalid language');
+        }
+
+        return $path;
     }
 
     /**
