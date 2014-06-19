@@ -21,8 +21,7 @@ class Countries
      */
     protected function getCountries($language)
     {
-        if(!isset($this->countries[$language]))
-        {
+        if (!isset($this->countries[$language])) {
             $this->countries[$language] = include($this->getFilePath($language));
         }
 
