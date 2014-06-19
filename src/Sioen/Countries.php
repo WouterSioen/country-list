@@ -61,4 +61,20 @@ class Countries
     {
         return $this->getCountries($language);
     }
+
+    /**
+     * @param string $abbreviation
+     * @param string $language
+     * @return string
+     */
+    public function getSpecificForLanguage($abbreviation, $language)
+    {
+        $countries = $this->getCountries($language);
+
+        if (isset($countries[strtoupper($abbreviation)])) {
+            return $countries[strtoupper($abbreviation)];
+        }
+
+        throw new \InvalidArgumentException('Invalid country abbreviation');
+    }
 }

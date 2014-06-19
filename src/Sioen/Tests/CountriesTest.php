@@ -33,6 +33,31 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $filePath = $method->invokeArgs($countries, array(''));
     }
 
+    function testGetSpecificForLanguage()
+    {
+        $countries = new Countries();
+
+        $this->assertEquals(
+            'Belgium',
+            $countries->getSpecificForLanguage('be', 'en')
+        );
+        $this->assertEquals(
+            'België',
+            $countries->getSpecificForLanguage('be', 'nl')
+        );
+    }
+
+    function testGetSpecificForLanguageThrowsErrorForInvalidAbbreviation()
+    {
+        $countries = new Countries();
+
+        $this->setExpectedException('InvalidArgumentException', 'Invalid country abbreviation');
+        $countries->getSpecificForLanguage('bsqfdfqsde', 'en');
+
+        $this->setExpectedException('InvalidArgumentException', 'Invalid country abbreviation');
+        $countries->getSpecificForLanguage('qsdf', 'en');
+    }
+
     /**
      * Returns a public version of a method
      *
