@@ -19,7 +19,7 @@ index file for your project
 
 # Usage
 
-With dependency injection container:
+### With dependency injection container:
 
     // fetch an array of countries in a language
     $this->getContainer('countries')->getForLanguage('en');
@@ -28,7 +28,9 @@ With dependency injection container:
     $this->getContainer('countries')->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
 
-PHP 5.4 +
+This is the prefered way, since there will only be one instance of the countries object, and data will be cached in this object.
+
+### PHP 5.4 (+)
 
     use Sioen\ContryList;
 
@@ -39,7 +41,7 @@ PHP 5.4 +
     $languages = (new CountryList)->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
 
-PHP 5.3
+### PHP 5.3
 
     use Sioen\ContryList;
 
