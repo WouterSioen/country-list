@@ -22,10 +22,10 @@ index file for your project
 ### With dependency injection container:
 
     // fetch an array of countries in a language
-    $this->getContainer('countries')->getForLanguage('en');
+    $languages = $this->getContainer('countries')->getForLanguage('en');
 
     // fetch one country in a language
-    $this->getContainer('countries')->getSpecificForLanguage('be', 'en');
+    $language = $this->getContainer('countries')->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
 
 This is the prefered way, since there will only be one instance of the countries object, and data will be cached in this object.
@@ -38,7 +38,7 @@ This is the prefered way, since there will only be one instance of the countries
     $languages = (new CountryList)->getForLanguage('en');
 
     // fetch one country in a language
-    $languages = (new CountryList)->getSpecificForLanguage('be', 'en');
+    $language = (new CountryList)->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
 
 ### PHP 5.3
@@ -51,5 +51,5 @@ This is the prefered way, since there will only be one instance of the countries
     $languages = $countryList->getForLanguage('en');
 
     // fetch one country in a language
-    $languages = $countryList->getSpecificForLanguage('be', 'en');
+    $language = $countryList->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
