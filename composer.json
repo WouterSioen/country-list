@@ -1,8 +1,8 @@
 {
     "name": "woutersioen/country-list",
     "type": "library",
-    "description": "A Sir Trevor to HTML conversion helper for PHP",
-    "keywords": ["Sir Trevor", "html"],
+    "description": "A wrapper around https://github.com/umpirsky/country-list to easily fetch a list of countries in a certain language or get a specific country by country code and language.",
+    "keywords": ["countries"],
     "homepage": "https://github.com/WouterSioen/country-list",
     "license": "MIT",
     "authors": [
