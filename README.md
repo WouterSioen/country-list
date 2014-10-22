@@ -30,7 +30,7 @@ index file for your project
     $language = $this->getContainer()->get('countries')->getSpecificForLanguage('be', 'en');
     // returns 'Belgium'
 
-This is the prefered way, since there will only be one instance of the countries object, and data will be cached in this object.
+Most modern PHP Frameworks have a dependency injection container. This is the prefered way, since there will only be one instance of the countries object, and data will be cached in this object.
 
 ### PHP 5.4 (+)
 
