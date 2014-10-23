@@ -27,6 +27,8 @@ require_once '../vendor/autoload.php';
 
 ### With dependency injection container:
 
+First add an instance of the class ```Sioen\CountryList``` to your dependency injection container.
+
 ```php
 // fetch an array of countries in a language
 $languages = $this->getContainer()->get('countries')->getForLanguage('en');
