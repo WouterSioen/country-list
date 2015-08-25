@@ -27,7 +27,7 @@ require_once '../vendor/autoload.php';
 
 ### With dependency injection container:
 
-First add an instance of the class ```Sioen\CountryList``` to your dependency injection container.
+First add an instance of the class ```Sioen\Countries``` to your dependency injection container.
 
 ```php
 // fetch an array of countries in a language
@@ -43,13 +43,13 @@ Most modern PHP Frameworks have a dependency injection container. This is the pr
 ### PHP 5.4 (+)
 
 ```php
-use Sioen\ContryList;
+use Sioen\Countries;
 
 // fetch an array of countries in a language
-$languages = (new CountryList)->getForLanguage('en');
+$languages = (new Countries)->getForLanguage('en');
 
 // fetch one country in a language
-$language = (new CountryList)->getSpecificForLanguage('be', 'en');
+$language = (new Countries)->getSpecificForLanguage('be', 'en');
 // returns 'Belgium'
 ```
 
@@ -58,12 +58,12 @@ $language = (new CountryList)->getSpecificForLanguage('be', 'en');
 ```php
 use Sioen\ContryList;
 
-$countryList = new CountryList();
+$Countries = new Countries();
 
 // fetch an array of countries in a language
-$languages = $countryList->getForLanguage('en');
+$languages = $Countries->getForLanguage('en');
 
 // fetch one country in a language
-$language = $countryList->getSpecificForLanguage('be', 'en');
+$language = $Countries->getSpecificForLanguage('be', 'en');
 // returns 'Belgium'
 ```
