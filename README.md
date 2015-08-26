@@ -58,12 +58,12 @@ $language = (new Countries)->getSpecificForLanguage('be', 'en');
 ```php
 use Sioen\ContryList;
 
-$Countries = new Countries();
+$countries = new Countries();
 
 // fetch an array of countries in a language
-$languages = $Countries->getForLanguage('en');
+$languages = $countries->getForLanguage('en');
 
 // fetch one country in a language
-$language = $Countries->getSpecificForLanguage('be', 'en');
+$language = $countries->getSpecificForLanguage('be', 'en');
 // returns 'Belgium'
 ```
