@@ -4,9 +4,9 @@ namespace Sioen\Tests;
 
 use Sioen\Countries;
 
-class ConverterTest extends \PHPUnit_Framework_TestCase
+class CountriesTest extends \PHPUnit_Framework_TestCase
 {
-    function testGetFilePathReturnsPathToAFile()
+    public function testGetFilePathReturnsPathToAFile()
     {
         $countries = new Countries();
         $filePath = $this->invokeProtectedMethod(
@@ -34,7 +34,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue(is_file($filePath));
     }
 
-    function testGetFilePathThrowsExceptionIfFileNotfound()
+    public function testGetFilePathThrowsExceptionIfFileNotfound()
     {
         $countries = new Countries();
         $this->setExpectedException('InvalidArgumentException', 'Invalid language');
@@ -54,7 +54,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    function testGetSpecificForLanguage()
+    public function testGetSpecificForLanguage()
     {
         $countries = new Countries();
 
@@ -68,7 +68,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    function testGetSpecificForLanguageThrowsErrorForInvalidAbbreviation()
+    public function testGetSpecificForLanguageThrowsErrorForInvalidAbbreviation()
     {
         $countries = new Countries();
 
@@ -93,6 +93,7 @@ class ConverterTest extends \PHPUnit_Framework_TestCase
         $class = new \ReflectionClass($class);
         $method = $class->getMethod($name);
         $method->setAccessible(true);
-        return $method->invokeArgs($instance, $arguments);;
+        return $method->invokeArgs($instance, $arguments);
+        ;
     }
 }
