@@ -94,6 +94,5 @@ class CountriesTest extends \PHPUnit_Framework_TestCase
         $method = $class->getMethod($name);
         $method->setAccessible(true);
         return $method->invokeArgs($instance, $arguments);
-        ;
     }
 }
